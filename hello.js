@@ -1,8 +1,8 @@
-'use strict'
-let sum = 0
-for (let i = 0; i < 9; i++) {
-  sum += 1
-}
-console.log(sum)
-if (sum % 2 === 0) console.log('Sum is even')
-else console.log('Sum is odd')
+'use strict' // don't forget this, it won't be shown in future code samples
+let a = 'hello'
+console.log(`a = ${a}, "a" is ${typeof a}`)
+a = 5
+a += 2
+console.log(`a = ${a}, "a" is ${typeof a}`)
+a = true
+console.log(`a = ${a}, "a" is ${typeof a}`)
