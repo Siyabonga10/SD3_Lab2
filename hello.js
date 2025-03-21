@@ -1,17 +1,41 @@
 'use strict' // don't forget this, it won't be shown in future code samples
 
-const map = function (functionToApply, array) {
-  const newArray = []
-  array.forEach(function (num) { newArray.push(functionToApply(num)) })
-  return newArray
+const students = [
+  {
+    name: 'Kwezi',
+    studentNumber: 453528,
+    yearOfStudy: 4
+  },
+  {
+    name: 'Pieter',
+    studentNumber: 454345,
+    yearOfStudy: 3
+  },
+  {
+    name: 'Jade',
+    studentNumber: 678343,
+    yearOfStudy: 4
+  },
+  {
+    name: 'Kiren',
+    studentNumber: 567893,
+    yearOfStudy: 4
+  }
+]
+
+const removeStudentRecord = function (student) {
+  const index = students.findIndex(function (studentFromList) {
+    return studentFromList.name === student.name && studentFromList.studentNumber === student.studentNumber && studentFromList.yearOfStudy === student.yearOfStudy
+  })
+  if (index !== -1) { delete students[index] }
 }
 
-const numbers = [1, 2, 3, 4, 5]
-console.log(numbers)
+const Kiren = {
+  name: 'Kiren',
+  studentNumber: 567893,
+  yearOfStudy: 4
+}
 
-const squaringFunction = function (number) { return number * number }
-const newNumbers = map(squaringFunction, numbers)
-console.log(newNumbers)
+removeStudentRecord(Kiren)
 
-const newNumbersMap = numbers.map(squaringFunction)
-console.log(newNumbersMap)
+console.log(students)
