@@ -1,35 +1,9 @@
 'use strict' // don't forget this, it won't be shown in future code samples
 
-const account = {
-  balance: 0,
-  withdrawals: 0,
-  deposits: 0,
-
-  deposit: function (amount) {
-    if (typeof (amount) !== 'number' || amount < 0) { // Ensure that we only handle positive numbers
-      console.log('Could not execute transaction') // In actual world you'd use exceptions
-    } else {
-      this.balance += amount
-      this.deposits += amount
-    }
-  },
-
-  withdraw: function (amount) {
-    if (typeof (amount) !== 'number' || amount > this.balance) { // Ensure that we only handle numbers, and the amount withdrawn is less than the balance
-      console.log('Could not execute transaction')
-    } else {
-      this.balance -= amount
-      this.withdrawals += amount
-    }
-  },
-
-  getSummary: function () {
-    return `This account has a balance of R ${this.balance}. There have been deposits totalling R ${this.deposis} and withdrawals totalling R${this.withdrawals}.`
-  }
-}
-
-account.deposit(100)
-account.deposit(300)
-account.withdraw(800)
-account.withdraw(150)
-console.log(account.getSummary())
+const numbers = [76, 55.7, 89, 37.5, 61]
+numbers.push(19) // puts 19 at the end of the array
+numbers.unshift(61) // puts 61 at the start of the list
+numbers[1] = 12 // Changes the value at index 1, ie 76 becomes 12
+numbers.splice(3, 1, 99) // Goes to index 3, and replaces 1 element, starting at index 3, with the value 99
+console.log(numbers) // 61, 12, 55.7, 99, 37.5, 61, 19
+console.log(numbers[7]) // undefined
