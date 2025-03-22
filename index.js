@@ -1,15 +1,8 @@
-const path = require('path')
 const express = require('express')
+const mainRouter = require('./mainRouter')
 
 const app = express()
-
-app.get('/', (req, res) => {
-    res.send('Hello world!')
-})
-
-app.get('/about', (req, res) => {
-    res.sendFile(path.join(__dirname, 'views', 'about.html'))
-})
+app.use(mainRouter)
 
 app.listen(3000)
 console.log('App running on port 3000')
